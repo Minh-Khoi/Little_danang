@@ -1,0 +1,42 @@
+<div class="history">
+  <input type="text" id="myInput" (keyup)="filterTable()" [(ngModel)]="search_info"
+    placeholder="search session id, email, type of visa ...">
+  <br>
+
+  Filter list by state....
+  <input type="radio" name="is_done" id="" value="pending" checked> pending
+  <input type="radio" name="is_done" id="" value="done"> done
+  <input type="radio" name="is_done" id="" value="overided"> overided
+  <button class="btn btn-info" (click)="filterList()">FILTER LIST</button>
+  <br>
+
+  <button class="btn btn-info" (click)="makeAllDone()">MAKE ALL ACTIONS DONE</button>
+  <button class="btn btn-warning" (click)="deleteAllOverided()">DELETE ALL OVERIDED</button>
+  <button class="btn btn-danger" (click)="deleteAllDone()">DELETE ALL DONE </button>
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:20%;">EMAIL</th>
+      <th style="width: 15%;">TYPE OF VISA</th>
+      <th style="width:15%;">DATE Of ARRIVALS</th>
+      <th style="width:20%;">ACTION</th>
+      <th style="width:30%;">AIRPORT</th>
+    </tr>
+    <tr *ngFor="let ses of listOfSessions">
+      <td>{{ses.email}}</td>
+      <td>{{ses.type_of_visa}}</td>
+      <td>{{ses.date_of_arrivals}}</td>
+      <td>
+        <a [href]="backendDirectory + '/'+ ses.img_path" target="_blank">SEE IMAGE</a> <br>
+        <input type="checkbox" [name]="ses.session_id" [id]="ses.session_id+ '_delete'" data-reference="delete">
+        <label [for]="ses.session_id+ '_delete'">DELETE</label> <br>
+        <input type="checkbox" [name]="ses.session_id " [id]="ses.session_id+ '_isDone'" data-reference="mark_done">
+        <label [for]="ses.session_id+ '_isDone'">MARK DONE</label>
+      </td>
+      <td>{{ses.airport}}</td>
+    </tr>
+  </table>
+
+  <button class="btn btn-info" (click)="makeAllDone()">MAKE ALL ACTIONS DONE</button>
+  <button class="btn btn-warning" (click)="deleteAllOverided()">DELETE ALL OVERIDED</button>
+  <button class="btn btn-danger" (click)="deleteAllDone()">DELETE ALL DONE </button>
+</div>

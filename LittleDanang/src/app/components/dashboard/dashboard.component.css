@@ -1,0 +1,58 @@
+/* SET POSITION OF CLASS .dashboard */
+.dashboard {
+  position: absolute;
+  top: 0;
+  left: 5vw;
+  width: 90%;
+}
+
+/* SET VISA_PROVIDER FULL WIDTH */
+#visas_provider {
+  display: block;
+}
+
+#admins_controller,
+#visas_provider,
+#histories_manager {
+  height: 48vh;
+  margin: 1vh 1%;
+  background-color: #00ffff6e;
+  border: 3px solid red;
+  font-weight: 800;
+  font-size: 1.5em;
+  /* width: 200px; */
+  overflow: hidden;
+}
+
+#visas_provider {
+  background-color: #a6ff006c;
+}
+
+#admins_controller:hover,
+#histories_manager:hover {
+  background-color: #00ffffb6;
+}
+
+#visas_provider:hover {
+  background-color: #a6ff00af;
+}
+
+#admins_controller span,
+#histories_manager span {
+  display: inline-block;
+  white-space: normal;
+  margin-top: 35%;
+}
+
+#visas_provider span {
+  position: relative;
+  top: 40%;
+}
+
+@media (min-width: 768px) {
+
+  #admins_controller,
+  #histories_manager {
+    width: 48%;
+  }
+}

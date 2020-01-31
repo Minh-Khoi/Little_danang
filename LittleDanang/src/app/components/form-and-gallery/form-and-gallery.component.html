@@ -1,0 +1,151 @@
+<div class="info_box">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="info_box_container d-flex flex-row align-items-center justify-content-start">
+          <div class="info_form_container">
+            <h3>Welcome to Viet Nam</h3>
+
+            <a routerLink="/term-and-condition" routerLinkActive="active">Please read the TERMS AND CONDITIONS first</a>
+            <p></p>
+            <h6>Fill your info below</h6>
+            <div id="info_form" class="info_form">
+              <div class="d-flex  flex-column align-items-center justify-content-start">
+                <ul class="info_form_list d-flex flex-row align-items-center justify-content-start flex-wrap">
+                  <li class="info_dropdown d-flex flex-row align-items-center justify-content-start">
+                    <span id="agreeTerm">Do you agree TERMS AND CONDITIONS?? *</span>
+                    <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+                    <ul>
+                      <li>Do you agree TERMS AND CONDITIONS?? *</li>
+                      <li>Agree</li>
+                      <li>Disagree</li>
+                    </ul>
+                  </li>
+                  <li [style.visibility]="!invalidForm.agreeTerm? 'hidden' : 'visible'"
+                    class="error_line only_for_mobile">
+                    You MUST agree with TERM AND CONDITIONS
+                  </li>
+                  <li class="info_dropdown d-flex flex-row align-items-center justify-content-start">
+                    <span id="type_of_visa">Type of visa: *</span>
+                    <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+                    <ul>
+                      <li>Type of visa: *</li>
+                      <li>
+                        Check out item 1 <i class="badge badge-primary float-right" style="margin-right: 10px;">$100
+                          &emsp;</i>
+                      </li>
+                      <li>
+                        Check out item 2<i class="badge badge-primary float-right" style="margin-right: 10px;">$100
+                          &emsp;</i>
+                      </li>
+                      <li>
+                        Check out item 3<i class="badge badge-primary float-right" style="margin-right: 10px;">$100
+                          &emsp;</i></li>
+                      <li>
+                        Check out item 4<i class="badge badge-primary float-right" style="margin-right: 10px;">$100
+                          &emsp;</i>
+                      </li>
+                      <li>
+                        Check out item 5<i class="badge badge-primary float-right" style="margin-right: 10px;">$100
+                          &emsp;</i>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="error_line" style="">
+                    <div class="only_for_lap" [style.visibility]="!invalidForm.agreeTerm? 'hidden' : 'visible'">You MUST
+                      agree with
+                      TERM AND
+                      CONDITIONS </div>
+                    <div style="" *ngIf="invalidForm.type_of_visa">Please CHOOSE type of visa </div>
+                  </li>
+
+                  <li>
+                    <input class="info_dropdown d-flex flex-row align-items-center justify-content-start" type="text"
+                      onfocus="(this.type='date')" onblur="this.type='text'" name="" id="dateOfArrivals"
+                      placeholder="Date of arrivals">
+                  </li>
+
+                  <li [style.visibility]="!invalidForm.date_of_arrivals ? 'hidden' : 'visible'"
+                    class="error_line only_for_mobile">
+                    You MUST agree with TERM AND CONDITIONS
+                  </li>
+
+                  <li class="info_dropdown d-flex flex-row align-items-center justify-content-start">
+                    <span id="airport">Arrival airport: *</span>
+                    <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+                    <ul>
+                      <li>Arrival airport: *</li>
+                      <li>Noi Bai International Airport (Ha Noi)</li>
+                      <li>Tan Son Nhat International Airport (Ho Chi Minh)</li>
+                      <li>Airport 3</li>
+                      <li>Airport 4</li>
+                      <li>Airport 5</li>
+                    </ul>
+                  </li>
+
+                  <li class="error_line" style="">
+                    <div class="only_for_lap" [style.visibility]="!invalidForm.date_of_arrivals ? 'hidden' : 'visible'">
+                      Date of
+                      arrival must be given and after today
+                    </div>
+                    <div style="" *ngIf="invalidForm.airport">Please CHOOSE an airport </div>
+                  </li>
+
+                  <li>
+                    <input class="info_dropdown d-flex flex-row align-items-center justify-content-start" type="email"
+                      name="" id="email" placeholder="Your email *">
+                  </li>
+
+                  <li [style.visibility]="!invalidForm.email ? 'hidden' : 'visible'" class="error_line only_for_mobile">
+                    You MUST agree with TERM AND CONDITIONS
+                  </li>
+
+                  <li class="info_dropdown d-flex flex-row align-items-center justify-content-start">
+                    <span id="passport_img_field">Upload your passport image *</span>
+                    <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+                    <ul>
+                      <li>Upload your passport image *</li>
+                      <li>
+                        <input type="file" name="" id="file" value="">
+                      </li>
+                    </ul>
+                    <!-- <input class="info_dropdown d-flex flex-row align-items-center justify-content-start" type="file"
+                      name="" id="file" value="Upload your passport image *"> -->
+                  </li>
+
+                  <li class="error_line" style="">
+                    <div class="only_for_lap" [style.visibility]="!invalidForm.email ? 'hidden':'visible'"> Email
+                      invalid !!
+                    </div>
+                    <div style="" *ngIf="invalidForm.passport_img_field">Please UPLOAD your PASSPORT image </div>
+                  </li>
+
+                  <li class="info_dropdown d-flex flex-row align-items-center justify-content-start">
+                    <span id="payment_feedback">Ready for payment? *</span>
+                    <i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+                    <ul>
+                      <li>Ready for payment? *</li>
+                      <li>Sure</li>
+                      <li>You don't agree
+                        <input type="text" name="" id="otherIdea" placeholder="Other Opinions">
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="error_line" style="">
+                    <div style="" *ngIf="invalidForm.payment_feedback">Are you ready for payment </div>
+                  </li>
+
+                </ul>
+                <button class="info_button" (click)="submittingHandle()">Send info</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <a name="" id="" class="btn btn-primary" routerLink="/login" routerLinkActive="active" role="button">
+  LOGIN AS ADMIN
+</a> -->

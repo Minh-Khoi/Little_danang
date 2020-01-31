@@ -1,0 +1,36 @@
+.term {
+  position: absolute;
+  top: 1em;
+  width: calc(100% + 117px);
+  left: 2vw;
+  height: auto;
+  background: #2e3f61;
+  margin: auto 3vw;
+  width: 88.5vw;
+  box-shadow: 0px 3px 57px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  padding-left: 83px;
+  padding-right: 66px;
+  padding-top: 0px;
+  padding-bottom: 45px;
+  color: rgb(119, 238, 51);
+  text-align: justify;
+}
+
+.term h2,
+.term a {
+  font-family: 'Kaushan script';
+}
+
+
+
+.term a {
+  text-decoration: underline;
+  color: yellow;
+}
+
+.term>p>strong {
+  font-size: 1.2em;
+  font-family: 'Kaushan script';
+  color: rgb(228, 228, 228)
+}
