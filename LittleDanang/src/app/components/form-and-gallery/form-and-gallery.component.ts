@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InitinfoService } from '../../services/initinfo.service';
 import { BackendApisService } from '../../services/backend-apis.service';
+// import 'jquery';
+// import 'bootstrap';
 declare var $: any;
 
 @Component({
@@ -35,13 +37,17 @@ export class FormAndGalleryComponent implements OnInit {
   ngOnInit() {
     this.initinfo.initinfo();
     this.backend_api.deleteOverdatedSession();
+    $(function () {
+      $('li[data-toggle="tooltip"]').tooltip();
+    });
+    // console.log(window.location.host);
   }
 
   submittingHandle() {
     // console.log(document.getElementById("file").files);
     //** get value of each field. */
     let agreeTerm = document.getElementById("agreeTerm").innerHTML,
-      type_of_visa = document.getElementById("type_of_visa").innerText.replace(/[\r\n]+/gm,', price: '),
+      type_of_visa = document.getElementById("type_of_visa").innerText.replace(/[\r\n]+/gm, ', price: '),
       // passport_code = (<HTMLInputElement>document.getElementById("numOfIDs")).value,
       date_of_arrivals = (<HTMLInputElement>document.getElementById("dateOfArrivals")).value,
       airport = document.getElementById("airport").innerHTML,

@@ -4,10 +4,12 @@
       <div class="col">
         <div class="info_box_container d-flex flex-row align-items-center justify-content-start">
           <div class="info_form_container">
-            <h3>Welcome to Viet Nam</h3>
-
-            <a routerLink="/term-and-condition" routerLinkActive="active">Please read the TERMS AND CONDITIONS first</a>
-            <p></p>
+            <h3>Easy Visa to Viet Nam</h3>
+            <h6 style="margin:0">
+              Managed by Danang City Public Security Station
+            </h6>
+            <a routerLink="/term-and-condition" routerLinkActive="active">At First, Please read the TERMS AND
+              CONDITIONS</a>
             <h6>Fill your info below</h6>
             <div id="info_form" class="info_form">
               <div class="d-flex  flex-column align-items-center justify-content-start">
@@ -62,7 +64,7 @@
                   <li>
                     <input class="info_dropdown d-flex flex-row align-items-center justify-content-start" type="text"
                       onfocus="(this.type='date')" onblur="this.type='text'" name="" id="dateOfArrivals"
-                      placeholder="Date of arrivals">
+                      placeholder="Date of arrivals *">
                   </li>
 
                   <li [style.visibility]="!invalidForm.date_of_arrivals ? 'hidden' : 'visible'"
@@ -91,9 +93,11 @@
                     <div style="" *ngIf="invalidForm.airport">Please CHOOSE an airport </div>
                   </li>
 
-                  <li>
+                  <li data-toggle="tooltip" data-placement="left"
+                    title="INTENSION: Please text your email here and CHECK IT TWO TIMES, in order to guarantee your email is correct">
                     <input class="info_dropdown d-flex flex-row align-items-center justify-content-start" type="email"
                       name="" id="email" placeholder="Your email *">
+
                   </li>
 
                   <li [style.visibility]="!invalidForm.email ? 'hidden' : 'visible'" class="error_line only_for_mobile">
@@ -144,6 +148,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
 <!-- <a name="" id="" class="btn btn-primary" routerLink="/login" routerLinkActive="active" role="button">
