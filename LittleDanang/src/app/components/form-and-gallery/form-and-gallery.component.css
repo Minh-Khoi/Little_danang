@@ -34,7 +34,7 @@
 .info_form_container h6,
 .info_form_container a {
   font-family: "Kaushan script";
-  color: rgb(119, 238, 51);
+  color: rgb(255, 255, 255);
 }
 
 .info_form_container a {
@@ -86,7 +86,7 @@
 
 .info_form_list .error_line {
   max-height: 1em;
-  color: rgb(224, 0, 0);
+  color: rgb(224, 180, 0);
   font-weight: 600;
   font-size: 0.75em;
   width: 100%;

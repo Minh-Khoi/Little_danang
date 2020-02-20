@@ -8,14 +8,14 @@ import { HistoriesComponent } from '../components/histories/histories.component'
 import { AdminsControllingComponent } from '../components/admins-controlling/admins-controlling.component';
 
 export const route: Routes = [
-  { path: 'form-and-gallery', component: FormAndGalleryComponent },
+  { path: '', component: FormAndGalleryComponent },
   { path: 'term-and-condition', component: TermAndConditionComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: HistoriesComponent },
   { path: 'visa', component: VisaProvidingComponent },
   { path: 'admin', component: AdminsControllingComponent },
   { path: 'history', component: HistoriesComponent },
-  { path: '', redirectTo: '/form-and-gallery', pathMatch: 'full' },
+  { path: 'form-and-gallery', redirectTo: '/', pathMatch: 'full' },
 
   // { path: '', component: FormAndGalleryComponent },
 ]
