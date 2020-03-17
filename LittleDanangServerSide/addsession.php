@@ -48,7 +48,7 @@ if (isset($_POST) && $_POST["method_to_DB"] == "create") {
     foreach ($sessions_by_email as $key => $arrayOfSession) {
       $newSes = Session::set($arrayOfSession);
       $newSes->set_is_done("overided");
-      $newSes->set_admin_id("-1");
+      $newSes->set_admin_id("1");
       // echo $newSes->get_is_done();
       $dao->update($newSes);
     }
@@ -121,7 +121,7 @@ if (isset($_POST) && $_POST["method_to_DB"] == "create") {
   $mailer->Username   = 'traveltolittledanang@gmail.com';                     // SMTP username
   $mailer->Password   = 'greenapple!@#goldenapple';                               // SMTP password
   $mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-  $mailer->Port       = 587;
+  $mailer->Port       = 465; //587;
   // $mailer->SMTPSecure = 'http';
 
   //Recipients

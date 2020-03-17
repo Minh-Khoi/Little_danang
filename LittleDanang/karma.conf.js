@@ -6,17 +6,17 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('./node_modules/karma-jasmine/lib'),
+      require('./node_modules/karma-chrome-launcher'),
+      require('./node_modules/karma-jasmine-html-reporter/src'),
+      require('./node_modules/karma-coverage-istanbul-reporter/src/reporter'),
+      require('./node_modules/@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/LittleDanang'),
+      dir: require('./node_modules/path').join(__dirname, './coverage/LittleDanang'),
       reports: ['html', 'lcovonly', 'text-summary'],
       fixWebpackSourcePaths: true
     },

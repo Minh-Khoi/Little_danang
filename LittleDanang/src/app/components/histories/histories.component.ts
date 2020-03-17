@@ -20,10 +20,10 @@ export class HistoriesComponent implements OnInit {
   ngOnInit() {
     this.backendDirectory = backendDirectory;
     window.onbeforeunload = (ev) => {
-      localStorage.removeItem('officer_code');
+      localStorage.removeItem('officer_code_true');
     }
     // console.log(localStorage.getItem("officer_code"));
-    if (localStorage.getItem('officer_code')) {
+    if (localStorage.getItem('officer_code_true')) {
       this.readByState("pending");
     } else {
       this.router.navigate(['form-and-gallery']);

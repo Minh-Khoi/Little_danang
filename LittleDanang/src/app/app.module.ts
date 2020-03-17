@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormAndGalleryComponent } from './components/form-and-gallery/form-and-gallery.component';
 import { TermAndConditionComponent } from './components/term-and-condition/term-and-condition.component';
 import { RouterModule } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ApiRouteModule } from './api-routes/api-route/api-route.module';
 import { GalleryModalComponent } from './components/gallery-modal/gallery-modal.component';
 import { LoginComponent } from './components/login/login.component';
@@ -33,7 +34,7 @@ import { HistoriesComponent } from './components/histories/histories.component';
     ApiRouteModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

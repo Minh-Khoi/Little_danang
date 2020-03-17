@@ -19,7 +19,7 @@ if (isset($result) && $result["password"] == md5($password)) {
     $_SESSION["ADMIN"] = $officer_code;
     // echo $result['password'] . " == " . $password . "<br>";
     // echo "Login successfully";
-    echo $officer_code;
+    echo true;
 } else {
     echo false;
 }

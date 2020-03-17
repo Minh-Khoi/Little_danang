@@ -10,7 +10,7 @@ import { route } from '../routes';
     CommonModule,
     RouterModule.forRoot(
       route,
-      { enableTracing: true } // <-- debugging purposes only
+      { useHash: true } // <-- debugging purposes only
     )
   ],
   exports: [RouterModule]
