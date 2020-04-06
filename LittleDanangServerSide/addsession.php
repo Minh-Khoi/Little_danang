@@ -121,7 +121,7 @@ if (isset($_POST) && $_POST["method_to_DB"] == "create") {
   $mailer->Username   = 'traveltolittledanang@gmail.com';                     // SMTP username
   $mailer->Password   = 'greenapple!@#goldenapple';                               // SMTP password
   $mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
-  $mailer->Port       = 465; //587;
+  $mailer->Port       = 587;
   // $mailer->SMTPSecure = 'http';
 
   //Recipients

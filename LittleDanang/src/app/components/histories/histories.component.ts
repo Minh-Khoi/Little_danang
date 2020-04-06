@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LookupSessionService } from '../../services/lookup-session.service';
 import { backendDirectory } from '../../api-routes/backendURL';
 import { Router } from '@angular/router';
+import { backendURL_check_login } from 'src/app/api-routes/login-route';
 
 
 @Component({
@@ -17,18 +18,43 @@ export class HistoriesComponent implements OnInit {
   constructor(private lookup: LookupSessionService,
     private router: Router) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.backendDirectory = backendDirectory;
+    // To remove session in backend about admin login informations
     window.onbeforeunload = (ev) => {
-      localStorage.removeItem('officer_code_true');
+      this.removeSessionOnServer();
     }
-    // console.log(localStorage.getItem("officer_code"));
-    if (localStorage.getItem('officer_code_true')) {
-      this.readByState("pending");
-    } else {
-      this.router.navigate(['form-and-gallery']);
-    }
+
+    // To check if admin login valid or invalid and the behaviors after that
+    let check_login_formdatas = new FormData(), officer_code_true = false;
+    check_login_formdatas.append('official_code', localStorage.getItem('official_code'));
+    check_login_formdatas.append('password', localStorage.getItem('password'));
+    check_login_formdatas.append('loading', 'loading');
+    // console.log(check_login_formdatas.get('password'));
+    await fetch(backendURL_check_login, {
+      method: 'POST',
+      body: check_login_formdatas
+    }).then(response => response.text())
+      .then(res => {
+        console.log(res);
+        if (res == "1") officer_code_true = true;
+        localStorage.clear();
+        if (officer_code_true) {
+          this.readByState("pending");
+        } else {
+          this.router.navigate(['form-and-gallery']);
+        }
+      });
+
     // this.deleteByIDs([1, 2]);
+  }
+
+  async removeSessionOnServer() {
+    let formdatas = new FormData();
+    formdatas.append('loading', 'unloading');
+    await fetch(backendURL_check_login, {
+      method: 'POST', body: formdatas
+    })
   }
 
   // READ

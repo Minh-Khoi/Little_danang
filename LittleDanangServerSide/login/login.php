@@ -1,6 +1,7 @@
 <?php
 // header("Content-Type: multipart/form-data");
 header("Access-Control-Allow-Origin: *");
+session_id('littledanangSession');
 session_start();
 
 require_once(dirname(__FILE__, 2) .  "/" . "dao/admin.dao.php");
@@ -17,6 +18,8 @@ $result = $admin->readByOfficerCode($officer_code);
 // echo json_encode($result);
 if (isset($result) && $result["password"] == md5($password)) {
     $_SESSION["ADMIN"] = $officer_code;
+    $_SESSION["PASSWORD"] = $password;
+
     // echo $result['password'] . " == " . $password . "<br>";
     // echo "Login successfully";
     echo true;

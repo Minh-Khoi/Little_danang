@@ -33,7 +33,9 @@ export class LoginComponent implements OnInit {
           // alert("Login failed \n Check back your password of officer_code");
           this.loginInvalid = true;
         } else {
-          localStorage.setItem('officer_code_true', resolved);
+          // localStorage.setItem('officer_code_true', resolved);
+          localStorage.setItem('official_code', form_datas.get('officer_code').toString());
+          localStorage.setItem('password', form_datas.get('password').toString());
           this.loginInvalid = false;
           this.router.navigate(['/dashboard']);
         }

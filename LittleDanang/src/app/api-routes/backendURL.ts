@@ -6,7 +6,7 @@ export const hostDIR = window.location.host;
 
 //** This is the path link to backend directory */
 export const backendDirectory = /*"http://localhost:8888/LittleDanangServerSide"; //*/  '/LittleDanangServerSide';
-
+// export const backendDirectory = "http://localhost:8888/LittleDanangServerSide"; //;
 
 export const backendURL = backendDirectory + "/addsession.php";
 export const deleteOverdatedSessionURL = backendDirectory + '/deleteOverdatedSession.php';
