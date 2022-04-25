@@ -10,12 +10,10 @@
 }
 
 .info_box .container .login_link{
-  font-family: 'Kaushan script';
-  font-weight: 900;
-  color: red;
   word-spacing: 0.2em;
   position: absolute;
   left: 70vw;
+  opacity: 0;
 }
 
 /* .info_box .container .login_link a {
