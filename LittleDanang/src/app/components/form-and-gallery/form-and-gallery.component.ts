@@ -3,6 +3,8 @@ import { InitinfoService } from '../../services/initinfo.service';
 import { BackendApisService } from '../../services/backend-apis.service';
 // import 'jquery';
 // import 'bootstrap';
+import { route } from '../../api-routes/routes';
+import {  Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -14,7 +16,8 @@ export class FormAndGalleryComponent implements OnInit {
   invalidForm: any;
   view_width: number;
 
-  constructor(private initinfo: InitinfoService,
+
+  constructor(private initinfo: InitinfoService,private router: Router,
     private backend_api: BackendApisService) {
     this.invalidForm = {
       agreeTerm: false,
@@ -124,6 +127,11 @@ export class FormAndGalleryComponent implements OnInit {
       });
     }
 
+  }
+
+  goToLogin(event:Event) {
+    event.stopPropagation()
+    this.router.navigate(["login"])
   }
 
 }

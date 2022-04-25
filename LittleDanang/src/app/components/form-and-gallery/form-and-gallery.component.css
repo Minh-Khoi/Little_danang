@@ -9,6 +9,20 @@
   margin: 0;
 }
 
+.info_box .container .login_link{
+  font-family: 'Kaushan script';
+  font-weight: 900;
+  color: red;
+  word-spacing: 0.2em;
+  position: absolute;
+  left: 70vw;
+}
+
+/* .info_box .container .login_link a {
+  background: #2e3f61c9;
+  display: inline-block;
+} */
+
 .info_box_container {
   /* position: absolute; */
   width: calc(100% + 117px);

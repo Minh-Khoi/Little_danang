@@ -4,6 +4,11 @@
       <div class="col">
         <div class="info_box_container d-flex flex-row align-items-center justify-content-start">
           <div class="info_form_container">
+            <!-- This button "login link" will navigate the to the admin login form -->
+            <div class="login_link btn-info" (click)="goToLogin($event)" >
+              <a >You are admin. Login here</a>
+            </div>
+
             <h3>Easy Visa to Viet Nam</h3>
             <h6 style="margin:0">
               Managed by Danang City Public Security Station
@@ -152,8 +157,11 @@
             </div>
           </div>
         </div>
+
       </div>
+
     </div>
+
   </div>
 
 </div>
